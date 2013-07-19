@@ -1,0 +1,12 @@
+<div class="nested-fields">
+  <div class="row-fluid">
+    <div class="span4">
+      <%= f.input :libelle, collection: Resultat::LIBELLE %>
+    </div>
+    <div class="span4">
+      <%= f.input :siege, collection: Resultat::SIEGE %>
+    </div>
+    <div class="span4">
+      <%= f.input :cote, collection: ["G", "D"] %>
+    </div>
+</div>

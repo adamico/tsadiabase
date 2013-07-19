@@ -29,6 +29,16 @@
   <%= f.input :autres %>
   <%= f.input :tsaami %>
   <%= f.input :tsaant %>
+  <%= f.simple_fields_for :resultats do |resultat| %>
+    <%= render "resultat_fields", f: resultat %>
+  <% end %>
+  <div class="links">
+    <%= link_to_add_association f, :resultats, class: "btn btn-primary btn-small" do %>
+      <i class="icon-plus icon-white"></i>
+      Ajouter un résultat
+    <% end %>
+  </div>
+
   <%= f.input :intro_statine %>
   <%= f.input :intro_aa %>
   <%= f.input :intro_iec %>

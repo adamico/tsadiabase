@@ -55,3 +55,4 @@ end
 
 gem 'bootstrap-sass', github: "thomas-mcdonald/bootstrap-sass"
 gem 'simple_form', github: "plataformatec/simple_form"
+gem "cocoon", github: "nathanvda/cocoon"

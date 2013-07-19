@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/nathanvda/cocoon.git
+  revision: 7a402fdfb1ca910e3a05da5069f89e252e589cc2
+  specs:
+    cocoon (1.2.0)
+
+GIT
   remote: git://github.com/plataformatec/simple_form.git
   revision: 91a07f587c0eb8ef5330b0e74af6ab9116f8b4a3
   specs:
@@ -140,6 +146,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass!
+  cocoon!
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
