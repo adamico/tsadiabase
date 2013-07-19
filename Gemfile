@@ -32,6 +32,14 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem "zeus"
+  gem 'pry-rails'
+  gem "quiet_assets", ">= 1.0.1"
+  gem 'rb-fsevent', :require => false
+  gem 'terminal-notifier-guard'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
