@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tsadiabase</title>
+  <title><%= content_for?(:title) ? yield(:title) + " - " : "" %>Tsadiabase</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="main-wrap" role="main">
+    <div class="container-fluid">
+    <% flash && flash.each do |name, msg| %>
+      <div class="alert fade in alert-<%= name %>">
+        <a href="#" data-dismiss="alert" class="close">&times;</a>
+        <strong><%= msg %></strong>
+      </div>
+    <% end %>
+      <div class="row-fluid">
+        <div class="span12">
+          <% if show_title? %>
+            <h1 class="page_title"><%= yield(:title) %></h1>
+          <% end -%>
+          <%= yield %>
+        </div>
+      </div><!--row-fluid-->
+    </div><!--container-fluid-->
+  </div><!--main-wrap-->
+  <%= render 'navbar' %>
 </body>
 </html>
