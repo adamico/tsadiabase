@@ -1,0 +1,169 @@
+<%= form_for(@patient) do |f| %>
+  <% if @patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% @patient.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sexe %><br>
+    <%= f.text_field :sexe %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :diabete %><br>
+    <%= f.text_field :diabete %>
+  </div>
+  <div class="field">
+    <%= f.label :diabete_duree %><br>
+    <%= f.number_field :diabete_duree %>
+  </div>
+  <div class="field">
+    <%= f.label :imc %><br>
+    <%= f.text_field :imc %>
+  </div>
+  <div class="field">
+    <%= f.label :imc %><br>
+    <%= f.text_field :imc %>
+  </div>
+  <div class="field">
+    <%= f.label :poids %><br>
+    <%= f.text_field :poids %>
+  </div>
+  <div class="field">
+    <%= f.label :poids %><br>
+    <%= f.text_field :poids %>
+  </div>
+  <div class="field">
+    <%= f.label :tabac %><br>
+    <%= f.text_field :tabac %>
+  </div>
+  <div class="field">
+    <%= f.label :hta %><br>
+    <%= f.text_field :hta %>
+  </div>
+  <div class="field">
+    <%= f.label :dysplipidemie %><br>
+    <%= f.text_field :dysplipidemie %>
+  </div>
+  <div class="field">
+    <%= f.label :aomi %><br>
+    <%= f.text_field :aomi %>
+  </div>
+  <div class="field">
+    <%= f.label :ips %><br>
+    <%= f.text_field :ips %>
+  </div>
+  <div class="field">
+    <%= f.label :coronarien %><br>
+    <%= f.text_field :coronarien %>
+  </div>
+  <div class="field">
+    <%= f.label :cerebro_vasculaire %><br>
+    <%= f.text_field :cerebro_vasculaire %>
+  </div>
+  <div class="field">
+    <%= f.label :cv_fam %><br>
+    <%= f.text_field :cv_fam %>
+  </div>
+  <div class="field">
+    <%= f.label :retinopathie %><br>
+    <%= f.text_field :retinopathie %>
+  </div>
+  <div class="field">
+    <%= f.label :neuropathie %><br>
+    <%= f.text_field :neuropathie %>
+  </div>
+  <div class="field">
+    <%= f.label :creat %><br>
+    <%= f.number_field :creat %>
+  </div>
+  <div class="field">
+    <%= f.label :clearance %><br>
+    <%= f.text_field :clearance %>
+  </div>
+  <div class="field">
+    <%= f.label :microalb %><br>
+    <%= f.text_field :microalb %>
+  </div>
+  <div class="field">
+    <%= f.label :proteinurie %><br>
+    <%= f.text_field :proteinurie %>
+  </div>
+  <div class="field">
+    <%= f.label :ttt_aa %><br>
+    <%= f.text_field :ttt_aa %>
+  </div>
+  <div class="field">
+    <%= f.label :ttt_diabete %><br>
+    <%= f.number_field :ttt_diabete %>
+  </div>
+  <div class="field">
+    <%= f.label :hba1c %><br>
+    <%= f.text_field :hba1c %>
+  </div>
+  <div class="field">
+    <%= f.label :hba1c %><br>
+    <%= f.text_field :hba1c %>
+  </div>
+  <div class="field">
+    <%= f.label :depistage %><br>
+    <%= f.check_box :depistage %>
+  </div>
+  <div class="field">
+    <%= f.label :suivi %><br>
+    <%= f.check_box :suivi %>
+  </div>
+  <div class="field">
+    <%= f.label :autres %><br>
+    <%= f.text_field :autres %>
+  </div>
+  <div class="field">
+    <%= f.label :tsaami %><br>
+    <%= f.check_box :tsaami %>
+  </div>
+  <div class="field">
+    <%= f.label :tsaant %><br>
+    <%= f.check_box :tsaant %>
+  </div>
+  <div class="field">
+    <%= f.label :intro_statine %><br>
+    <%= f.check_box :intro_statine %>
+  </div>
+  <div class="field">
+    <%= f.label :intro_aa %><br>
+    <%= f.check_box :intro_aa %>
+  </div>
+  <div class="field">
+    <%= f.label :intro_iec %><br>
+    <%= f.check_box :intro_iec %>
+  </div>
+  <div class="field">
+    <%= f.label :ttt_chir %><br>
+    <%= f.check_box :ttt_chir %>
+  </div>
+  <div class="field">
+    <%= f.label :angiotdm %><br>
+    <%= f.check_box :angiotdm %>
+  </div>
+  <div class="field">
+    <%= f.label :surv_doppler %><br>
+    <%= f.check_box :surv_doppler %>
+  </div>
+  <div class="field">
+    <%= f.label :surv_doppler_freq %><br>
+    <%= f.text_field :surv_doppler_freq %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,101 @@
+<h1>Listing patients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sexe</th>
+      <th>Age</th>
+      <th>Diabete</th>
+      <th>Diabete duree</th>
+      <th>Imc</th>
+      <th>Imc</th>
+      <th>Poids</th>
+      <th>Poids</th>
+      <th>Tabac</th>
+      <th>Hta</th>
+      <th>Dysplipidemie</th>
+      <th>Aomi</th>
+      <th>Ips</th>
+      <th>Coronarien</th>
+      <th>Cerebro vasculaire</th>
+      <th>Cv fam</th>
+      <th>Retinopathie</th>
+      <th>Neuropathie</th>
+      <th>Creat</th>
+      <th>Clearance</th>
+      <th>Microalb</th>
+      <th>Proteinurie</th>
+      <th>Ttt aa</th>
+      <th>Ttt diabete</th>
+      <th>Hba1c</th>
+      <th>Hba1c</th>
+      <th>Depistage</th>
+      <th>Suivi</th>
+      <th>Autres</th>
+      <th>Tsaami</th>
+      <th>Tsaant</th>
+      <th>Intro statine</th>
+      <th>Intro aa</th>
+      <th>Intro iec</th>
+      <th>Ttt chir</th>
+      <th>Angiotdm</th>
+      <th>Surv doppler</th>
+      <th>Surv doppler freq</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.sexe %></td>
+        <td><%= patient.age %></td>
+        <td><%= patient.diabete %></td>
+        <td><%= patient.diabete_duree %></td>
+        <td><%= patient.imc %></td>
+        <td><%= patient.imc %></td>
+        <td><%= patient.poids %></td>
+        <td><%= patient.poids %></td>
+        <td><%= patient.tabac %></td>
+        <td><%= patient.hta %></td>
+        <td><%= patient.dysplipidemie %></td>
+        <td><%= patient.aomi %></td>
+        <td><%= patient.ips %></td>
+        <td><%= patient.coronarien %></td>
+        <td><%= patient.cerebro_vasculaire %></td>
+        <td><%= patient.cv_fam %></td>
+        <td><%= patient.retinopathie %></td>
+        <td><%= patient.neuropathie %></td>
+        <td><%= patient.creat %></td>
+        <td><%= patient.clearance %></td>
+        <td><%= patient.microalb %></td>
+        <td><%= patient.proteinurie %></td>
+        <td><%= patient.ttt_aa %></td>
+        <td><%= patient.ttt_diabete %></td>
+        <td><%= patient.hba1c %></td>
+        <td><%= patient.hba1c %></td>
+        <td><%= patient.depistage %></td>
+        <td><%= patient.suivi %></td>
+        <td><%= patient.autres %></td>
+        <td><%= patient.tsaami %></td>
+        <td><%= patient.tsaant %></td>
+        <td><%= patient.intro_statine %></td>
+        <td><%= patient.intro_aa %></td>
+        <td><%= patient.intro_iec %></td>
+        <td><%= patient.ttt_chir %></td>
+        <td><%= patient.angiotdm %></td>
+        <td><%= patient.surv_doppler %></td>
+        <td><%= patient.surv_doppler_freq %></td>
+        <td><%= link_to 'Show', patient %></td>
+        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Patient', new_patient_path %>
