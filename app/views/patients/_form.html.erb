@@ -1,52 +1,163 @@
 <%= simple_form_for @patient, html: {class: "form-vertical"} do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :sexe, collection: ["H", "F"], autofocus: true %>
-  <%= f.input :age %>
-  <%= f.input :diabete, collection: ["1", "2"] %>
-  <%= f.input :diabete_duree %>
-  <%= f.input :imc %>
-  <%= f.input :poids, as: :string %>
-  <%= f.input :tabac, collection: Patient::PLUSMOINS %>
-  <%= f.input :hta, collection: Patient::PLUSMOINS %>
-  <%= f.input :dysplipidemie, collection: Patient::PLUSMOINS %>
-  <%= f.input :aomi, collection: Patient::PLUSMOINS %>
-  <%= f.input :ips %>
-  <%= f.input :coronarien, collection: Patient::PLUSMOINS  %>
-  <%= f.input :cerebro_vasculaire, collection: Patient::PLUSMOINS  %>
-  <%= f.input :cv_fam, collection: Patient::PLUSMOINS  %>
-  <%= f.input :retinopathie, collection: Patient::PLUSMOINS  %>
-  <%= f.input :neuropathie, collection: Patient::PLUSMOINS  %>
-  <%= f.input :creat %>
-  <%= f.input :clearance %>
-  <%= f.input :microalb, collection: Patient::PLUSMOINS  %>
-  <%= f.input :proteinurie, collection: Patient::PLUSMOINS  %>
-  <%= f.input :ttt_aa, collection: Patient::PLUSMOINS  %>
-  <%= f.input :ttt_diabete, collection: Patient::TTTDIABETE %>
-  <%= f.input :hba1c %>
-  <%= f.input :depistage %>
-  <%= f.input :suivi %>
-  <%= f.input :autres %>
-  <%= f.input :tsaami %>
-  <%= f.input :tsaant %>
-  <%= f.simple_fields_for :resultats do |resultat| %>
-    <%= render "resultat_fields", f: resultat %>
-  <% end %>
-  <div class="links">
-    <%= link_to_add_association f, :resultats, class: "btn btn-primary btn-small" do %>
-      <i class="icon-plus icon-white"></i>
-      Ajouter un résultat
-    <% end %>
+  <div class="row-fluid">
+    <div class="span3">
+      <%= f.input :sexe, collection: ["H", "F"], autofocus: true %>
+    </div>
+    <div class="span3">
+      <%= f.input :age %>
+    </div>
+    <div class="span3">
+      <%= f.input :diabete, collection: ["1", "2"] %>
+    </div>
+    <div class="span3">
+      <%= f.input :diabete_duree %>
+    </div>
   </div>
+  <div class="row-fluid">
+    <div class="span3">
+      <%= f.input :imc %>
+    </div>
+    <div class="span3">
+      <%= f.input :poids, as: :string %>
+    </div>
+    <div class="span3">
+      <%= f.input :tabac, collection: Patient::PLUSMOINS %>
+    </div>
+    <div class="span3">
+      <%= f.input :hta, collection: Patient::PLUSMOINS %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span3">
+      <%= f.input :dysplipidemie, collection: Patient::PLUSMOINS %>
+    </div>
+    <div class="span3">
+      <%= f.input :aomi, collection: Patient::PLUSMOINS %>
+    </div>
+    <div class="span3">
+      <%= f.input :ips %>
+    </div>
+    <div class="span3">
+      <%= f.input :coronarien, collection: Patient::PLUSMOINS  %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span3">
+      <%= f.input :cerebro_vasculaire, collection: Patient::PLUSMOINS  %>
+    </div>
+    <div class="span3">
+      <%= f.input :cv_fam, collection: Patient::PLUSMOINS  %>
+    </div>
+    <div class="span3">
+      <%= f.input :retinopathie, collection: Patient::PLUSMOINS  %>
+    </div>
+    <div class="span3">
+      <%= f.input :neuropathie, collection: Patient::PLUSMOINS  %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span3">
+      <%= f.input :creat %>
+    </div>
+    <div class="span3">
+      <%= f.input :clearance %>
+    </div>
+    <div class="span3">
+      <%= f.input :microalb, collection: Patient::PLUSMOINS  %>
+    </div>
+    <div class="span3">
+      <%= f.input :proteinurie, collection: Patient::PLUSMOINS  %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span3">
+      <%= f.input :ttt_aa, collection: Patient::PLUSMOINS  %>
+    </div>
+    <div class="span3">
+      <%= f.input :ttt_diabete, collection: Patient::TTTDIABETE %>
+    </div>
+    <div class="span3">
+      <%= f.input :hba1c %>
+    </div>
+  </div>
+  <h4>Contexte de l'examen</h4>
+  <div class="row-fluid">
+    <div class="span2">
+      <%= f.input :depistage %>
+    </div>
+    <div class="span2">
+      <%= f.input :suivi %>
+    </div>
+    <div class="span4">
+      <%= f.input :autres %>
+    </div>
+    <div class="span2">
+      <%= f.input :tsaami %>
+    </div>
+    <div class="span2">
+      <%= f.input :tsaant %>
+    </div>
+  </div>
+  <div class="resultats">
+    <h4 style="margin-top: 0;">Résultats</h4>
+    <div class="row-fluid resultats-header">
+      <div class="span3">
+        <h5 class="text-center">Libellé</h5>
+      </div>
+      <div class="span3">
+        <h5 class="text-center">Siège</h5>
+      </div>
+      <div class="span3">
+        <h5 class="text-center">Côté</h5>
+      </div>
+      <div class="span3">
+      </div>
+    </div>
+    <%= f.simple_fields_for :resultats do |resultat| %>
+      <%= render "resultat_fields", f: resultat %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association f, :resultats, class: "btn btn-primary btn-small" do %>
+        <i class="icon-plus icon-white"></i>
+        Ajouter un résultat
+      <% end %>
+    </div>
+  </div>
+  <h4>Modifications thérapeutiques</h4>
 
-  <%= f.input :intro_statine %>
-  <%= f.input :intro_aa %>
-  <%= f.input :intro_iec %>
-  <%= f.input :ttt_chir %>
-  <%= f.input :angiotdm %>
-  <%= f.input :surv_doppler %>
-  <%= f.input :surv_doppler_freq %>
+  <div class="row-fluid">
+    <div class="span4">
+      <%= f.input :intro_statine %>
+    </div>
+    <div class="span4">
+      <%= f.input :intro_aa %>
+    </div>
+    <div class="span4">
+      <%= f.input :intro_iec %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span4">
+      <%= f.input :ttt_chir %>
+    </div>
+    <div class="span4">
+      <%= f.input :angiotdm %>
+    </div>
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :surv_doppler, "Surv. Doppler", class: "control-label" %>
+        <div class="controls controls-row">
+          <%= f.check_box :surv_doppler, class: "span2" %>
+          <%= f.text_field :surv_doppler_freq, class: "span10" %>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="form-actions">
-    <%= f.button :submit, "Enregistrer" %>
+    <%= f.button :submit, "Enregistrer et saisir nouvelle fiche", class: "btn-primary" %>
+    <%= f.button :submit, "Enregistrer et fermer", class: "btn-info", name: "_close" %>
+    <%= link_to "Annuler", patients_path, class: 'btn btn-danger' %>
   </div>
 <% end %>
