@@ -4,4 +4,3 @@
 $ ->
   $("form").bind "cocoon:after-insert", (e, added_resultat) ->
     console.log added_resultat.find("select").first().focus()
-
