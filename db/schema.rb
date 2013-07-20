@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130720155403) do
+ActiveRecord::Schema.define(version: 20130720165459) do
 
   create_table "patients", force: true do |t|
     t.string   "sexe"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20130720155403) do
     t.integer  "patient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "description"
   end
 
   add_index "resultats", ["patient_id"], name: "index_resultats_on_patient_id", using: :btree
