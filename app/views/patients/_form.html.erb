@@ -17,10 +17,10 @@
   </div>
   <div class="row-fluid">
     <div class="span3">
-      <%= f.input :imc %>
+      <%= f.input :imc, input_html: {step: "0.1"} %>
     </div>
     <div class="span3">
-      <%= f.input :poids, as: :string %>
+      <%= f.input :poids, input_html: {step: "0.1"} %>
     </div>
     <div class="span3">
       <%= f.input :tabac, collection: Patient::PLUSMOINS %>
@@ -85,7 +85,7 @@
       <%= f.input :ttt_diabete, collection: Patient::TTTDIABETE %>
     </div>
     <div class="span3">
-      <%= f.input :hba1c %>
+      <%= f.input :hba1c, input_html: {step: "0.1"} %>
     </div>
   </div>
   <h4>Contexte de l'examen</h4>
