@@ -76,8 +76,8 @@
       <div class="control-group">
         <%= f.label :ttt_aa, class: "control-label" %>
         <div class="controls controls-row">
-          <%= f.collection_select :ttt_aa, Patient::PLUSMOINS, :first, :last, class: "span2" %>
-          <%= f.text_field :ttt_aa_quoi, class: "span10" %>
+          <%= f.collection_select :ttt_aa, Patient::PLUSMOINS, :first, :last, {include_blank: true}, {class: "span3"} %>
+          <%= f.text_field :ttt_aa_quoi, class: "span9" %>
         </div>
       </div>
     </div>
