@@ -1,43 +1,45 @@
 <h1>Listing patients</h1>
 
-<table>
+<table class="table table-condensed table-striped">
   <thead>
     <tr>
+      <th>Id</th>
       <th>Sexe</th>
       <th>Age</th>
       <th>Diabete</th>
-      <th>Diabete duree</th>
+      <th>Duree</th>
       <th>Imc</th>
       <th>Poids</th>
       <th>Tabac</th>
       <th>Hta</th>
-      <th>Dysplipidemie</th>
+      <th>Dysl.</th>
       <th>Aomi</th>
       <th>Ips</th>
-      <th>Coronarien</th>
-      <th>Cerebro vasculaire</th>
-      <th>Cv fam</th>
-      <th>Retinopathie</th>
-      <th>Neuropathie</th>
-      <th>Creat</th>
-      <th>Clearance</th>
-      <th>Microalb</th>
-      <th>Proteinurie</th>
-      <th>Ttt aa</th>
-      <th>Ttt diabete</th>
+      <th>Corona.</th>
+      <th>Cereb. v</th>
+      <th>Cv f.</th>
+      <th>Retinop.</th>
+      <th>Neurop.</th>
+      <th>Creat.</th>
+      <th>Clear.</th>
+      <th>Microalb.</th>
+      <th>Protein.</th>
+      <th colspan="2">Ttt aa</th>
+      <th>Ttt diab.</th>
       <th>Hba1c</th>
-      <th>Depistage</th>
+      <th>Depist.</th>
       <th>Suivi</th>
       <th>Autres</th>
       <th>Tsaami</th>
       <th>Tsaant</th>
-      <th>Intro statine</th>
-      <th>Intro aa</th>
-      <th>Intro iec</th>
-      <th>Ttt chir</th>
+      <th colspan="4">Résultats</th>
+      <th>Statine</th>
+      <th>Aa</th>
+      <th>IEC</th>
+      <th>Chir</th>
       <th>Angiotdm</th>
-      <th>Surv doppler</th>
-      <th>Surv doppler freq</th>
+      <th>Surv</th>
+      <th>Surv freq</th>
       <th></th>
       <th></th>
       <th></th>
@@ -47,6 +49,7 @@
   <tbody>
     <% @patients.each do |patient| %>
       <tr>
+        <td><%= patient.id %></td>
         <td><%= patient.sexe %></td>
         <td><%= patient.age %></td>
         <td><%= patient.diabete %></td>
@@ -68,6 +71,7 @@
         <td><%= patient.microalb %></td>
         <td><%= patient.proteinurie %></td>
         <td><%= patient.ttt_aa %></td>
+        <td><%= patient.ttt_aa_quoi %></td>
         <td><%= patient.ttt_diabete %></td>
         <td><%= patient.hba1c %></td>
         <td><%= patient.depistage %></td>
@@ -75,6 +79,10 @@
         <td><%= patient.autres %></td>
         <td><%= patient.tsaami %></td>
         <td><%= patient.tsaant %></td>
+        <td><%= patient.resultats.count %></td>
+        <% (1..3).each do |i| %>
+          <td><%= patient.send(:"resultat#{i}") %></td>
+        <% end %>
         <td><%= patient.intro_statine %></td>
         <td><%= patient.intro_aa %></td>
         <td><%= patient.intro_iec %></td>
@@ -84,7 +92,8 @@
         <td><%= patient.surv_doppler_freq %></td>
         <td><%= link_to 'Show', patient %></td>
         <td><%= link_to 'Edit', edit_patient_path(patient), data: {"no-turbolink" => true} %></td>
-        <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', patient, method: :delete,
+          data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -92,4 +101,5 @@
 
 <br>
 
-<%= link_to 'New Patient', new_patient_path, data: {"no-turbolink" => true} %>
+<%= link_to 'Nouvelle fiche', new_patient_path,
+  data: {"no-turbolink" => true}, class: "btn btn-primary"%>

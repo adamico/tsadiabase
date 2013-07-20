@@ -11,6 +11,10 @@ class Patient < ActiveRecord::Base
   COLUMNS_FOR_CSV = [:sexe, :age, :diabete, :diabete_duree, :imc, :imc, :poids, :poids, :tabac, :hta, :dysplipidemie, :aomi, :ips, :coronarien, :cerebro_vasculaire, :cv_fam, :retinopathie, :neuropathie, :creat, :clearance, :microalb, :proteinurie, :ttt_aa, :ttt_diabete, :hba1c, :hba1c, :depistage, :suivi, :autres, :tsaami, :tsaant, :intro_statine, :intro_aa, :intro_iec, :ttt_chir, :angiotdm, :surv_doppler, :surv_doppler_freq]
 
   (1..3).each do |i|
+    define_method :"resultat#{i}" do
+      resultat = self.resultats[i-1]
+      [resultat.try(:libelle), resultat.try(:siege), resultat.try(:cote)].compact.join(" ")
+    end
     %w(libelle siege cote).each do |field|
       define_method :"#{field}#{i}" do
         self.resultats[i-i].send(:try, field)
