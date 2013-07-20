@@ -37,7 +37,7 @@ end
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
@@ -56,3 +56,9 @@ end
 gem 'bootstrap-sass', github: "thomas-mcdonald/bootstrap-sass"
 gem 'simple_form', github: "plataformatec/simple_form"
 gem "cocoon", github: "nathanvda/cocoon"
+gem 'foreman'
+
+group :production do
+  # Heroku gems
+  gem 'rails_12factor', group: :production
+end
