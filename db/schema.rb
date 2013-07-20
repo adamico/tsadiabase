@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130720152317) do
+ActiveRecord::Schema.define(version: 20130720155403) do
 
   create_table "patients", force: true do |t|
     t.string   "sexe"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20130720152317) do
     t.string   "proteinurie"
     t.string   "ttt_aa"
     t.integer  "ttt_diabete"
-    t.decimal  "hba1c",              precision: 2, scale: 1
+    t.decimal  "hba1c",              precision: 3, scale: 1
     t.boolean  "depistage"
     t.boolean  "suivi"
     t.string   "autres"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20130720152317) do
     t.string   "surv_doppler_freq"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ttt_aa_quoi"
   end
 
   create_table "resultats", force: true do |t|

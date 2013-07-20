@@ -73,7 +73,13 @@
   </div>
   <div class="row-fluid">
     <div class="span3">
-      <%= f.input :ttt_aa, collection: Patient::PLUSMOINS  %>
+      <div class="control-group">
+        <%= f.label :ttt_aa, class: "control-label" %>
+        <div class="controls controls-row">
+          <%= f.collection_select :ttt_aa, Patient::PLUSMOINS, :first, :last, class: "span2" %>
+          <%= f.text_field :ttt_aa_quoi, class: "span10" %>
+        </div>
+      </div>
     </div>
     <div class="span3">
       <%= f.input :ttt_diabete, collection: Patient::TTTDIABETE %>
