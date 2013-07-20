@@ -5,6 +5,16 @@ GIT
     cocoon (1.2.0)
 
 GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: b46b7e37360413e6a9faf43df76ffc6f6e749058
+  specs:
+    devise (3.0.0)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      warden (~> 1.2.3)
+
+GIT
   remote: git://github.com/plataformatec/simple_form.git
   revision: 91a07f587c0eb8ef5330b0e74af6ab9116f8b4a3
   specs:
@@ -48,6 +58,7 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.10)
+    bcrypt-ruby (3.1.1)
     builder (3.1.4)
     coderay (1.0.9)
     coffee-rails (4.0.0)
@@ -81,6 +92,7 @@ GEM
     mime-types (1.23)
     minitest (4.7.5)
     multi_json (1.7.7)
+    orm_adapter (0.4.0)
     pg (0.15.1)
     polyglot (0.3.3)
     pry (0.9.12.2)
@@ -153,6 +165,8 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    warden (1.2.3)
+      rack (>= 1.0)
     zeus (0.13.3)
       method_source (>= 0.6.7)
 
@@ -163,6 +177,7 @@ DEPENDENCIES
   bootstrap-sass!
   cocoon!
   coffee-rails (~> 4.0.0)
+  devise!
   foreman
   jbuilder (~> 1.2)
   jquery-rails

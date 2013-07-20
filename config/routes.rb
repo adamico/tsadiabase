@@ -1,4 +1,5 @@
 Tsadiabase::Application.routes.draw do
+  devise_for :users
   resources :patients
 
   root to: "home#index"

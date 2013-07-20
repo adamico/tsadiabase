@@ -57,6 +57,7 @@ gem 'bootstrap-sass', github: "thomas-mcdonald/bootstrap-sass"
 gem 'simple_form', github: "plataformatec/simple_form"
 gem "cocoon", github: "nathanvda/cocoon"
 gem 'foreman'
+gem "devise", github: "plataformatec/devise"
 
 group :production do
   # Heroku gems
