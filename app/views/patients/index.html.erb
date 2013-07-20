@@ -83,7 +83,7 @@
         <td><%= patient.surv_doppler %></td>
         <td><%= patient.surv_doppler_freq %></td>
         <td><%= link_to 'Show', patient %></td>
-        <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+        <td><%= link_to 'Edit', edit_patient_path(patient), data: {"no-turbolink" => true} %></td>
         <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -92,4 +92,4 @@
 
 <br>
 
-<%= link_to 'New Patient', new_patient_path %>
+<%= link_to 'New Patient', new_patient_path, data: {"no-turbolink" => true} %>
