@@ -3,4 +3,4 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   $("form").bind "cocoon:after-insert", (e, added_resultat) ->
-    console.log added_resultat.find("select").first().focus()
+    added_resultat.find("select").first().focus()
