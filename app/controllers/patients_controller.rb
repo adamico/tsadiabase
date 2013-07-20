@@ -6,7 +6,7 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all
+    @patients = Patient.order(:id)
     respond_with @patients
   end
 
@@ -31,7 +31,7 @@ class PatientsController < ApplicationController
   # POST /patients.json
   def create
     @patient = Patient.create(patient_params)
-    flash[:notice] = "Fiche créée avec succès" if @patient.save
+    flash[:notice] = "Fiche #{@patient.id} créée avec succès" if @patient.save
     if params[:_close]
       location = patients_path
     else
@@ -49,7 +49,7 @@ class PatientsController < ApplicationController
       location = new_patient_path
     end
     @patient.update(patient_params)
-    flash[:notice] = "Fiche mise à jour avec succès" if @patient.save
+    flash[:notice] = "Fiche #{@patient.id} mise à jour avec succès" if @patient.save
     respond_with @patient, location: location
   end
 
@@ -69,6 +69,6 @@ class PatientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
-      params.require(:patient).permit(:sexe, :age, :diabete, :diabete_duree, :imc, :imc, :poids, :poids, :tabac, :hta, :dysplipidemie, :aomi, :ips, :coronarien, :cerebro_vasculaire, :cv_fam, :retinopathie, :neuropathie, :creat, :clearance, :microalb, :proteinurie, :ttt_aa, :ttt_diabete, :hba1c, :hba1c, :depistage, :suivi, :autres, :tsaami, :tsaant, :intro_statine, :intro_aa, :intro_iec, :ttt_chir, :angiotdm, :surv_doppler, :surv_doppler_freq, resultats_attributes: [:libelle, :siege, :cote, :id])
+      params.require(:patient).permit(:sexe, :age, :diabete, :diabete_duree, :imc, :imc, :poids, :poids, :tabac, :hta, :dysplipidemie, :aomi, :ips, :coronarien, :cerebro_vasculaire, :cv_fam, :retinopathie, :neuropathie, :creat, :clearance, :microalb, :proteinurie, :ttt_aa, :ttt_aa_quoi, :ttt_diabete, :hba1c, :hba1c, :depistage, :suivi, :autres, :tsaami, :tsaant, :intro_statine, :intro_aa, :intro_iec, :ttt_chir, :angiotdm, :surv_doppler, :surv_doppler_freq, resultats_attributes: [:libelle, :siege, :cote, :id])
     end
 end
