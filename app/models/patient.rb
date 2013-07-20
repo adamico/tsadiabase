@@ -5,4 +5,6 @@ class Patient < ActiveRecord::Base
 
   PLUSMOINS = ["+", "-"]
   TTTDIABETE = (0..3)
+
+  validates :age, :sexe, presence: true
 end
