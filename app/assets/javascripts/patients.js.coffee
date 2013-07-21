@@ -12,7 +12,7 @@ $ ->
 
 $.fn.auto_tab = ->
   @each ->
-    $(@).on "keyup", (e) ->
+    $(@).on "change", (e) ->
       if @value is "a - normal"
         $("#patient_intro_statine").focus()
       else
