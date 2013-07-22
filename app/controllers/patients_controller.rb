@@ -31,7 +31,7 @@ class PatientsController < ApplicationController
   # POST /patients.json
   def create
     @patient = Patient.create(patient_params)
-    flash[:notice] = "Fiche #{@patient.id} créée avec succès" if @patient.save
+    flash[:notice] = "Fiche <a href='#{edit_patient_path(@patient.id)}'>#{@patient.id}</a> créée avec succès".html_safe if @patient.save
     if params[:_close]
       location = patients_path
     else
@@ -49,7 +49,7 @@ class PatientsController < ApplicationController
       location = new_patient_path
     end
     @patient.update(patient_params)
-    flash[:notice] = "Fiche #{@patient.id} mise à jour avec succès" if @patient.save
+    flash[:notice] = "Fiche <a href='#{edit_patient_path(@patient.id)}'>#{@patient.id}</a> mise à jour avec succès".html_safe if @patient.save
     respond_with @patient, location: location
   end
 
